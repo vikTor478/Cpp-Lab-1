@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Selected Question",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${workspaceFolder}/${input:questionName}/main.cpp",
+                "-o",
+                "${workspaceFolder}/${input:questionName}/main.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "questionName",
+            "type": "pickString",
+            "description": "Select which question to build",
+            "options": [
+                "Question_1",
+                "Question_2",
+                "Question_3",
+                "Question_4"
+            ]
+        }
+    ]
+}
